@@ -37,13 +37,13 @@ import { F12018UDP } from 'f1-2018-udp';
 const client = new F12018UDP();
 client.on('SESSION', m => console.log(m));
 client.on('MOTION', m => console.log(m));
+client.on('CAR_TELEMETRY', m => console.log(m));
 
 //the following listeners need implementing:
 client.on('LAP_DATA', m => console.log(m);
 client.on('EVENT', m => console.log(m);
 client.on('PARTICIPENTS', m => console.log(m);
 client.on('CAR_SETUPS', m => console.log(m);
-client.on('CAR_TELEMETRY', m => console.log(m);
 client.on('CAR_STATUS', m => console.log(m);
 
 
