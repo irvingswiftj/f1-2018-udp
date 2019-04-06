@@ -3,6 +3,7 @@ import EventEmitter from 'events';
 import PacketHeader from './parsers/PacketHeader';
 import PacketSessionData from './parsers/PacketSessionData';
 import PacketMotionData from './parsers/PacketMotionData';
+import PacketParticipantsData from './parsers/PacketParticipantsData';
 import {
   MOTION,
   SESSION,
@@ -60,7 +61,7 @@ class F12018UDP extends EventEmitter {
     }
 
     if (packetId === PARTICIPENTS) {
-      return null;
+      return PacketParticipantsData;
     }
 
     if (packetId === CAR_SETUPS) {
