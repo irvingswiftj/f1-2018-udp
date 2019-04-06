@@ -1,6 +1,5 @@
 import F1Parser from './F1Parser';
 import CarMotionData from './CarMotionData';
-import CarTelemetryData from './CarTelemetryData';
 
 export default class PacketMotionData extends F1Parser {
   constructor(buffer) {
@@ -44,21 +43,6 @@ export default class PacketMotionData extends F1Parser {
       .float('m_angularAccelerationY') // Angular velocity y-component
       .float('m_angularAccelerationZ') // Angular velocity z-component
       .float('m_frontWheelsAngle'); // Current front wheels angle in radians;
-
-    this.data = this.fromBuffer(buffer);
-  }
-}
-
-export class PacketCarTelemetryData extends F1Parser {
-  constructor(buffer) {
-    super();
-    this.endianess('little')
-      .skip(21)
-      .array('m_carTelemetryData', {
-        length: 20,
-        type: new CarTelemetryData(),
-      })
-      .uint32('m_buttonStatus');
 
     this.data = this.fromBuffer(buffer);
   }

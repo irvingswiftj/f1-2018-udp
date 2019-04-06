@@ -2,7 +2,8 @@ import dgram from 'dgram';
 import EventEmitter from 'events';
 import PacketHeader from './parsers/PacketHeader';
 import PacketSessionData from './parsers/PacketSessionData';
-import PacketMotionData, { PacketCarTelemetryData } from './parsers/PacketMotionData';
+import PacketCarTelemetryData from './parsers/PacketCarTelemetryData';
+import PacketMotionData from './parsers/PacketMotionData';
 import {
   MOTION,
   SESSION,
