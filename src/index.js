@@ -2,6 +2,7 @@ import dgram from 'dgram';
 import EventEmitter from 'events';
 import PacketHeader from './parsers/PacketHeader';
 import PacketSessionData from './parsers/PacketSessionData';
+import PacketCarTelemetryData from './parsers/PacketCarTelemetryData';
 import PacketMotionData from './parsers/PacketMotionData';
 import {
   MOTION,
@@ -68,7 +69,7 @@ class F12018UDP extends EventEmitter {
     }
 
     if (packetId === CAR_TELEMETRY) {
-      return null;
+      return PacketCarTelemetryData;
     }
 
     if (packetId === CAR_STATUS) {
